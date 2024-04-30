@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "SKkw78LuFvgtdFunI9KQajQI0mZiDsQem7/wpNdN91xsWmiNVCjhOVBbI6WTRdISoh1B6NbpaR1o6KUid+8AXQ==",
+  "dgSpecHash": "iwbbf3kdMHtTWHNtiyLUY1BcTjSCBKqTHxa6SzeT1RHCCl6p3Y+O0Lboaebls3GEClMmAB/0nPvBxeqJP9Tnhw==",
   "success": true,
   "projectFilePath": "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Application\\Market.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\stasi\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\stasi\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\stasi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

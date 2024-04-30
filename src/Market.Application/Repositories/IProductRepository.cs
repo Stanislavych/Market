@@ -1,8 +1,6 @@
-﻿using Market.Domain.Entities;
-
-namespace Market.Application.Repositories
+﻿namespace Market.Application.Repositories
 {
-    public interface IProductRepository : IRepositoryBase<Product>
+    public interface IProductRepository : IRepositoryBase<Domain.Entities.Product>
     {
     }
 }

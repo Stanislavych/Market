@@ -1,8 +1,6 @@
-﻿using Market.Domain.Entities;
-
-namespace Market.Application.Repositories
+﻿namespace Market.Application.Repositories
 {
-    public interface ICategoryRepository : IRepositoryBase<Category>
+    public interface ICategoryRepository : IRepositoryBase<Domain.Entities.Category>
     {
     }
 }

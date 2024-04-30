@@ -35,5 +35,10 @@ namespace Market.Infrastructure.Repositories
         {
             dbSet.Update(entity);
         }
+
+        public async Task<IEnumerable<T>> FindAllAsync()
+        {
+            return await dbSet.ToListAsync();
+        }
     }
 }
