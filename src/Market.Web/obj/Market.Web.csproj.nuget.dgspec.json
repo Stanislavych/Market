@@ -4,6 +4,120 @@
     "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Web\\Market.Web.csproj": {}
   },
   "projects": {
+    "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Application\\Market.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Application\\Market.Application.csproj",
+        "projectName": "Market.Application",
+        "projectPath": "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Application\\Market.Application.csproj",
+        "packagesPath": "C:\\Users\\stasi\\.nuget\\packages\\",
+        "outputPath": "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\stasi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Domain\\Market.Domain.csproj": {
+                "projectPath": "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Domain\\Market.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Domain\\Market.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Domain\\Market.Domain.csproj",
+        "projectName": "Market.Domain",
+        "projectPath": "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Domain\\Market.Domain.csproj",
+        "packagesPath": "C:\\Users\\stasi\\.nuget\\packages\\",
+        "outputPath": "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\stasi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Web\\Market.Web.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +141,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Application\\Market.Application.csproj": {
+                "projectPath": "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Application\\Market.Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "Market.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Market.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Market.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Market.Application.dll": {}
+        }
+      },
+      "Market.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Market.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Market.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Market.Application/1.0.0": {
+      "type": "project",
+      "path": "../Market.Application/Market.Application.csproj",
+      "msbuildProject": "../Market.Application/Market.Application.csproj"
+    },
+    "Market.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Market.Domain/Market.Domain.csproj",
+      "msbuildProject": "../Market.Domain/Market.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "Market.Application >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\stasi\\.nuget\\packages\\": {}
@@ -33,7 +70,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Application\\Market.Application.csproj": {
+              "projectPath": "D:\\Программы\\Visual Studio\\VS Projects\\Market\\src\\Market.Application\\Market.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
