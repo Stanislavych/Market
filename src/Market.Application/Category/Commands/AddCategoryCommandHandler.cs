@@ -14,6 +14,16 @@ namespace Market.Application.Category.Commands
 
         public async Task<int> Handle(AddCategoryCommand request, CancellationToken cancellationToken)
         {
+            if (string.IsNullOrEmpty(request.Name))
+            {
+                throw new ArgumentException("Name is required.");
+            }
+
+            if (await _unitOfWork.Category.ExistByName(request.Name))
+            {
+                throw new ArgumentException("Category with the same name already exist.");
+            }
+
             var category = new Domain.Entities.Category
             {
                 Name = request.Name

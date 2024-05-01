@@ -23,5 +23,15 @@ namespace Market.Infrastructure.Repositories
 
             return await FindByConditionAsync(p=>p.CategoryId == category.Id);
         }
+
+        public async Task<bool> ExistByName(string name)
+        {
+            return await context.Set<Product>().AnyAsync(p => p.Name == name);
+        }
+        
+        public async Task<bool> ExistById(int id)
+        {
+            return await context.Set<Product>().AnyAsync(p => p.Id == id);
+        }
     }
 }

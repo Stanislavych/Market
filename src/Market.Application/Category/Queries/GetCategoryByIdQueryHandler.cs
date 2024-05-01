@@ -14,6 +14,11 @@ namespace Market.Application.Category.Queries
 
         public async Task<Domain.Entities.Category> Handle(GetCategoryByIdQuery request,CancellationToken cancellationToken)
         {
+            if (!(await _unitOfWork.Category.ExistById(request.Id)))
+            {
+                throw new ArgumentException("Category with this Id does not exist.");
+            }
+
             var category = await _unitOfWork.Category.FindByConditionAsync(i=>i.Id == request.Id);
             var currentCategory = category.FirstOrDefault();
 

@@ -14,6 +14,11 @@ namespace Market.Application.Product.Queries
 
         public async Task<IEnumerable<Domain.Entities.Product>> Handle(GetProductsByCategoryNameQuery request, CancellationToken cancellationToken)
         {
+            if (!(await _unitOfWork.Category.ExistByName(request.CategoryName)))
+            {
+                throw new ArgumentException("Category with this Name does not exist.");
+            }
+
             return await _unitOfWork.Product.FindByCategoryNameAsync(request.CategoryName);
         }
     }

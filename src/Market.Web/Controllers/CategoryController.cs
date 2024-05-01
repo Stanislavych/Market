@@ -26,19 +26,6 @@ namespace Market.Web.Controllers
             return Ok(categories);
         }
 
-        [HttpPost("CreateCategory")]
-        public async Task<ActionResult<int>> Create([FromBody] AddCategoryCommand command)
-        {
-            if (command == null)
-            {
-                return BadRequest();
-            }
-
-            var categoryId = await _mediator.Send(command);
-
-            return Ok(categoryId);
-        }
-
         [HttpGet("GetCategory/{id}")]
         public async Task<ActionResult<Category>> GetById(int id)
         {
@@ -48,14 +35,17 @@ namespace Market.Web.Controllers
             return Ok(category);
         }
 
+        [HttpPost("CreateCategory")]
+        public async Task<ActionResult<int>> Create([FromBody] AddCategoryCommand command)
+        {
+            var categoryId = await _mediator.Send(command);
+
+            return Ok(categoryId);
+        }
+
         [HttpPut("UpdateCategory")]
         public async Task<ActionResult<Category>> Update([FromBody] UpdateCategoryCommand command)
         {
-            if (command == null)
-            {
-                return BadRequest();
-            }
-
             var category = await _mediator.Send(command);
 
             return Ok(category);

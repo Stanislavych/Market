@@ -26,19 +26,6 @@ namespace Market.Web.Controllers
             return Ok(products);
         }
 
-        [HttpPost("CreateProduct")]
-        public async Task<ActionResult<int>> Create([FromBody] AddProductCommand command)
-        {
-            if (command == null)
-            {
-                return BadRequest();
-            }
-
-            var productId = await _mediator.Send(command);
-
-            return productId;
-        }
-
         [HttpGet("GetProduct/{id}")]
         public async Task<ActionResult<Product>> GetById(int id)
         {
@@ -57,14 +44,17 @@ namespace Market.Web.Controllers
             return Ok(products);
         }
 
+        [HttpPost("CreateProduct")]
+        public async Task<ActionResult<int>> Create([FromBody] AddProductCommand command)
+        {
+            var productId = await _mediator.Send(command);
+
+            return productId;
+        }
+
         [HttpPut("UpdateProduct")]
         public async Task<ActionResult<Product>> Update([FromBody] UpdateProductCommand command)
         {
-            if (command == null)
-            {
-                return BadRequest();
-            }
-
             var product = await _mediator.Send(command);
 
             return Ok(product);
@@ -73,7 +63,7 @@ namespace Market.Web.Controllers
         [HttpDelete("DeleteProduct/{id}")]
         public async Task<ActionResult<int>> Delete(int id)
         {
-            var command = new DeleteProductCommand {Id=id };
+            var command = new DeleteProductCommand { Id = id };
             var result = await _mediator.Send(command);
 
             return Ok(result);
