@@ -20,6 +20,7 @@ namespace Market.Application.Category.Commands
             };
 
             await _unitOfWork.Category.CreateAsync(category);
+            await _unitOfWork.SaveChangesAsync();
 
             return category.Id;
         }

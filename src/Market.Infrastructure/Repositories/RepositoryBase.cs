@@ -38,7 +38,7 @@ namespace Market.Infrastructure.Repositories
 
         public async Task<IEnumerable<T>> FindAllAsync()
         {
-            return await dbSet.ToListAsync();
+            return await dbSet.AsNoTracking().ToListAsync();
         }
     }
 }

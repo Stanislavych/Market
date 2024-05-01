@@ -17,7 +17,7 @@ namespace Market.Web.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllCategories")]
         public async Task<ActionResult<IEnumerable<Category>>> GetAll()
         {
             var query = new GetAllCategoriesQuery();
@@ -26,7 +26,7 @@ namespace Market.Web.Controllers
             return Ok(categories);
         }
 
-        [HttpPost]
+        [HttpPost("CreateCategory")]
         public async Task<ActionResult<int>> Create([FromBody] AddCategoryCommand command)
         {
             if (command == null)
@@ -37,6 +37,37 @@ namespace Market.Web.Controllers
             var categoryId = await _mediator.Send(command);
 
             return Ok(categoryId);
+        }
+
+        [HttpGet("GetCategory/{id}")]
+        public async Task<ActionResult<Category>> GetById(int id)
+        {
+            var query = new GetCategoryByIdQuery { Id = id };
+            var category = await _mediator.Send(query);
+
+            return Ok(category);
+        }
+
+        [HttpPut("UpdateCategory")]
+        public async Task<ActionResult<Category>> Update([FromBody] UpdateCategoryCommand command)
+        {
+            if (command == null)
+            {
+                return BadRequest();
+            }
+
+            var category = await _mediator.Send(command);
+
+            return Ok(category);
+        }
+
+        [HttpDelete("DeleteCategory/{id}")]
+        public async Task<ActionResult<int>> Delete(int id)
+        {
+            var command = new DeleteCategoryCommand { Id = id };
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
         }
     }
 }

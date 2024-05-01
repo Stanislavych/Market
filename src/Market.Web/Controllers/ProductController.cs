@@ -17,7 +17,7 @@ namespace Market.Web.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllProducts")]
         public async Task<ActionResult<IEnumerable<Product>>> GetAll()
         {
             var query = new GetAllProductsQuery();
@@ -26,7 +26,7 @@ namespace Market.Web.Controllers
             return Ok(products);
         }
 
-        [HttpPost]
+        [HttpPost("CreateProduct")]
         public async Task<ActionResult<int>> Create([FromBody] AddProductCommand command)
         {
             if (command == null)
@@ -37,6 +37,46 @@ namespace Market.Web.Controllers
             var productId = await _mediator.Send(command);
 
             return productId;
+        }
+
+        [HttpGet("GetProduct/{id}")]
+        public async Task<ActionResult<Product>> GetById(int id)
+        {
+            var query = new GetProductByIdQuery { Id = id };
+            var product = await _mediator.Send(query);
+
+            return Ok(product);
+        }
+
+        [HttpGet("GetProducts/{categoryName}")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetByCategoryName(string categoryName)
+        {
+            var query = new GetProductsByCategoryNameQuery { CategoryName = categoryName };
+            var products = await _mediator.Send(query);
+
+            return Ok(products);
+        }
+
+        [HttpPut("UpdateProduct")]
+        public async Task<ActionResult<Product>> Update([FromBody] UpdateProductCommand command)
+        {
+            if (command == null)
+            {
+                return BadRequest();
+            }
+
+            var product = await _mediator.Send(command);
+
+            return Ok(product);
+        }
+
+        [HttpDelete("DeleteProduct/{id}")]
+        public async Task<ActionResult<int>> Delete(int id)
+        {
+            var command = new DeleteProductCommand {Id=id };
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
         }
     }
 }

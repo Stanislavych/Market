@@ -22,6 +22,7 @@ namespace Market.Application.Product.Commands
             };
 
             await _unitOfWork.Product.CreateAsync(product);
+            await _unitOfWork.SaveChangesAsync();
 
             return product.Id;
         }
